@@ -6,6 +6,8 @@
 </head>
 <body>
 <h1>Тест Секции</h1>
-<h3><p style="text-align: center;">{{ section }}</p></h3>
+{% autoescape off %}
+{{ section }}
+{% endautoescape %}
 </body>
 </html>
