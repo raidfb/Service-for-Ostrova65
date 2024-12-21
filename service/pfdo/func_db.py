@@ -45,3 +45,9 @@ def get_search_names_sections():        # Получение списка пар
 
     return search_names
 
+
+def get_output_info_sections():
+    con = sql3.connect(db_path)
+    cur = con.cursor()
+
+    cur.execute(f'SELECT id, short_name, adress, age_min, age_max FROM sections')
