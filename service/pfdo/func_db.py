@@ -12,7 +12,13 @@ def get_section_from_id(section_id):        # Получение секции и
     cur.execute(f'SELECT * FROM sections WHERE id = {section_id}')
     section_db = cur.fetchall()[0]
 
-    section = {}
+    section = {"id": section_db[0], "name": section_db[1], "short_name": section_db[2], "keywords": section_db[3],
+               "form" : section_db[4], "ovz" : section_db[5], "mun_id" : section_db[6], "operator_id" : section_db[7],
+               "organization_id" : section_db[8], "hours" : section_db[9], "location_lat" : section_db[10], "location_lon" : section_db[11],
+               "age_min" : section_db[12], "age_max" : section_db[13], "years" : section_db[14], "direction_id" : section_db[15],
+               "direction_name" : section_db[16], "image" : section_db[17], "organization_name" : section_db[18], "address": section_db[19],
+               "certified" : section_db[20], "commercial" : section_db[21], "meaningful" : section_db[22], "general" : section_db[23],
+               "preprofessional" : section_db[24]}
 
     return section
 
