@@ -12,4 +12,4 @@ def index(request):
 
     html_list += f'</ul>'
 
-    return render(request,'index.html', {'section' : html_list})
+    return render(request,'page60406555.html', {'section' : html_list})
