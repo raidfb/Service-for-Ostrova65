@@ -50,4 +50,17 @@ def get_output_info_sections():
     con = sql3.connect(db_path)
     cur = con.cursor()
 
-    cur.execute(f'SELECT id, short_name, adress, age_min, age_max FROM sections')
+    cur.execute(f'SELECT id, short_name, address, age_min, age_max FROM sections')
+    section_db = cur.fetchall()
+
+    infos = []
+    for element in section_db:
+        age = f'{element[3] // 12} - {element[4] // 12}'
+        info = {'id' : element[0], 'short_name' : element[1], 'address' : element[2], 'age' : age}
+        infos.append(info)
+
+    return infos
+
+
+
+get_output_info_sections()
