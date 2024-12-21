@@ -2,7 +2,7 @@ import sqlite3 as sql3
 import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-db_path = os.path.join(BASE_DIR, "service_db.db")
+db_path = os.path.join(BASE_DIR, "service/pfdo/service_db.db")
 
 
 def get_section_from_id(section_id):        # Получение секции из базы данных по идентификатору

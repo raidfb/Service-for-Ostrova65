@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .func_db import get_section_from_id, get_search_names_sections, get_output_info_sections
+from func_db import get_section_from_id, get_output_info_sections
 
 def index(request):
     sections = get_output_info_sections()
@@ -12,7 +12,7 @@ def index(request):
 
     html_list += f'</ul>'
 
-    return render(request,'page60406555.html', {'section' : html_list})
+    return render(request, 'page60406555.html', {'section' : html_list})
 
 
 def section(request, section_id):
@@ -45,4 +45,4 @@ def section(request, section_id):
                  f'<li>Адресс: {address}</li>'
                  f'</ul>')
 
-    return render(request,'index.html', {'section' : list_html})
+    return render(request, 'index.html', {'section' : list_html})
