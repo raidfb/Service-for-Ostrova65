@@ -4,13 +4,13 @@ from .func_db import get_section_from_id, get_search_names_sections, get_output_
 def index(request):
     sections = get_output_info_sections()
 
-    html_list = f'<ul>'
+    html_list = ''
 
     for info in sections:
-        info_str = f'{info["id"]} | {info["short_name"]} | {info["address"]} | {info["age"]}'
-        html_list += f'<li>{info_str} ---> <a href="section/{info["id"]}">Подробнее</a></li>'
+        info_str = f'{info["short_name"]} | {info["address"]} | {info["age"]}'
+        html_list += f'<div class="block">{info_str} ---> <a style="text-decoration: none; color: black" href="section/{info["id"]}">Подробнее</a></div>'
 
-    html_list += f'</ul>'
+    # html_list += f'</ul>'
 
     return render(request,'page60406555.html', {'sections' : html_list})
 
